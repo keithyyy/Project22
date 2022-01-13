@@ -5,6 +5,12 @@
 //  Created by Keith Crooc on 2022-01-12.
 //
 
+// CHALLENGE
+// 1. Write code that shows a UIAlertController when beacon is first detected
+// 2. Go through some other iBeacons in Detect Beacon app and add their UUIDs to your app, then register them with iOS. Now add a second label to the app that shows new
+// text depending on which beacon was located
+// 3. Add a circle to your view, use animation to scale it up/down depending on the distance from the beacon
+
 import CoreLocation
 import UIKit
 
