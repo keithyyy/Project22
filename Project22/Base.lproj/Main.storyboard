@@ -22,21 +22,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon not found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIG-Kv-kdq">
+                                <rect key="frame" x="73" y="529" width="268" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="oIG-Kv-kdq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="73" id="JfO-RC-A6u"/>
+                            <constraint firstItem="oIG-Kv-kdq" firstAttribute="top" secondItem="VgK-EB-FpS" secondAttribute="bottom" constant="52" id="ix9-Ct-D9S"/>
                             <constraint firstItem="VgK-EB-FpS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jHi-L1-9ZZ"/>
                             <constraint firstItem="VgK-EB-FpS" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="k3o-Ge-fP0"/>
+                            <constraint firstItem="oIG-Kv-kdq" firstAttribute="centerX" secondItem="VgK-EB-FpS" secondAttribute="centerX" id="z31-br-dxp"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="beaconLabel" destination="oIG-Kv-kdq" id="wUd-MN-zrS"/>
                         <outlet property="distanceReading" destination="VgK-EB-FpS" id="E30-nc-Sdy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="84"/>
+            <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
         </scene>
     </scenes>
     <resources>
