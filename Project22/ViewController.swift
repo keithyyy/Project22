@@ -8,8 +8,8 @@
 // CHALLENGE
 // 1. Write code that shows a UIAlertController when beacon is first detected ✅
 // 2. Go through some other iBeacons in Detect Beacon app and add their UUIDs to your app, then register them with iOS. Now add a second label to the app that shows new
-// text depending on which beacon was located
-// 3. Add a circle to your view, use animation to scale it up/down depending on the distance from the beacon
+// text depending on which beacon was located ✅
+// 3. Add a circle to your view, use animation to scale it up/down depending on the distance from the beacon ✅
 
 import CoreLocation
 import UIKit
@@ -18,6 +18,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet var distanceReading: UILabel!
     @IBOutlet var beaconLabel: UILabel!
+    
+    @IBOutlet var distanceMeter: UIView!
+    
     var locationManager: CLLocationManager?
     
     var alertBeaconShown = false
@@ -35,6 +38,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         
         view.backgroundColor = .gray
+        
+        distanceMeter.layer.cornerRadius = 128
+        
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
@@ -79,6 +85,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 self.view.backgroundColor = .blue
                 self.distanceReading.text = "FAR"
                 self.beaconLabel.text = beaconName
+                self.distanceMeter.isHidden = false
+                self.distanceMeter.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
                 
                 
                 
@@ -86,6 +94,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 self.view.backgroundColor = .orange
                 self.distanceReading.text = "NEAR"
                 self.beaconLabel.text = beaconName
+                self.distanceMeter.isHidden = false
+                self.distanceMeter.transform = CGAffineTransform(scaleX: 2, y: 2)
+                
                 
                 
                 
@@ -93,11 +104,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 self.view.backgroundColor = .green
                 self.distanceReading.text = "RIGHT HERE"
                 self.beaconLabel.text = beaconName
+                self.distanceMeter.transform = CGAffineTransform(scaleX: 5, y: 5)
+                self.distanceMeter.backgroundColor = .green
+                
                 
             default:
                 self.view.backgroundColor = .gray
                 self.distanceReading.text = "UNKNOWN"
                 self.beaconLabel.text = beaconName
+                self.distanceMeter.layer.isHidden = true
                 
                 
             }
@@ -143,6 +158,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         alertBeaconShown = true
         
     }
+    
     
 
 

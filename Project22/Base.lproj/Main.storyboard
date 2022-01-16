@@ -16,6 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZu-3I-olV">
+                                <rect key="frame" x="79" y="325" width="256" height="256"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="256" id="GJp-VR-zdk"/>
+                                    <constraint firstAttribute="height" constant="256" id="jgt-Cy-FqS"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UNKNOWN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgK-EB-FpS">
                                 <rect key="frame" x="111" y="429" width="192" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
@@ -32,6 +40,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="AZu-3I-olV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="33J-fY-r0C"/>
+                            <constraint firstItem="AZu-3I-olV" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="9ju-cl-7Rk"/>
                             <constraint firstItem="oIG-Kv-kdq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="73" id="JfO-RC-A6u"/>
                             <constraint firstItem="oIG-Kv-kdq" firstAttribute="top" secondItem="VgK-EB-FpS" secondAttribute="bottom" constant="52" id="ix9-Ct-D9S"/>
                             <constraint firstItem="VgK-EB-FpS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jHi-L1-9ZZ"/>
@@ -41,6 +51,7 @@
                     </view>
                     <connections>
                         <outlet property="beaconLabel" destination="oIG-Kv-kdq" id="wUd-MN-zrS"/>
+                        <outlet property="distanceMeter" destination="AZu-3I-olV" id="31P-ZC-Ath"/>
                         <outlet property="distanceReading" destination="VgK-EB-FpS" id="E30-nc-Sdy"/>
                     </connections>
                 </viewController>
@@ -52,6 +63,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
